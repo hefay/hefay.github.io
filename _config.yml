@@ -26,6 +26,7 @@ github_username:  hefay
 mastodon:
   - username: hefay
     instance: mastodonczech.cz
+show_excerpts: true
 
 # Build settings
 markdown: kramdown

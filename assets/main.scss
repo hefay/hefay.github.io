@@ -1,0 +1,22 @@
+---
+---
+@import "{{ site.theme }}";
+
+body {
+	background-color: hsl(290, 50%, 90%);
+	color: hsl(290, 50%, 30%);
+
+	.post-meta, .footer-col-wrapper, .svg-icon {
+		color: hsl(290, 50%, 70%);
+		fill: hsl(290, 50%, 70%);
+	}
+
+	a, a:visited {
+		color: hsl(200, 50%, 40%);
+
+		&:hover, &:active {
+			text-decoration: underline;	
+		}
+
+	}
+}
