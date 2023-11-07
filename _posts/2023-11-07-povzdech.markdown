@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Povzdech"
+date:   2023-11-07 12:21:22 +0200
+---
+
+Někdy věci prostě nejdou podle plánu, nejdou tak, jak bychom si přáli. A slova útěchy, že všechno bude v pořádku jsou spíš k smíchu než k uklidnění.
+
+
+{% youtube "https://www.youtube.com/watch?v=S9bCLPwzSC0" %}
