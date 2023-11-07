@@ -2,21 +2,43 @@
 ---
 @import "{{ site.theme }}";
 
+
 body {
-	background-color: hsl(290, 50%, 90%);
+	--base-color: 290, 50%;
+	--ligth-color-shade: 90%;
+	--medium-color-shade: 70%;
+	--dark-color-shade: 90%;
+	--link-color: 200, 50%, 40%;
+
+	background-color: hsl(var(--base-color), var(--ligth-color-shade));
 	color: hsl(290, 50%, 30%);
 
 	.post-meta, .footer-col-wrapper, .svg-icon {
-		color: hsl(290, 50%, 70%);
-		fill: hsl(290, 50%, 70%);
+		color: hsl(var(--base-color), var(--medium-color-shade));
+		fill: hsl(var(--base-color), var(--medium-color-shade));
 	}
 
 	a, a:visited {
-		color: hsl(200, 50%, 40%);
+		color: hsl(var(--link-color));
 
 		&:hover, &:active {
 			text-decoration: underline;	
 		}
+
+	}
+}
+
+.site-header {
+	background: hsl(290, 50%, 30%);
+
+	border-bottom: 5px solid hsl(var(--base-color), 70%);
+
+	.site-title, .site-title:visited {
+		color: hsl(0, 100%, 80%);
+	}
+
+	.site-nav .page-link {
+		color: hsl(0, 100%, 80%);
 
 	}
 }
