@@ -7,4 +7,4 @@ date:   2023-11-07 12:21:22 +0200
 Někdy věci prostě nejdou podle plánu, nejdou tak, jak bychom si přáli. A slova útěchy, že všechno bude v pořádku jsou spíš k smíchu než k uklidnění.
 
 
-{% youtube "https://www.youtube.com/watch?v=S9bCLPwzSC0" %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S9bCLPwzSC0?si=B_VQPLgrWAQVZixO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
