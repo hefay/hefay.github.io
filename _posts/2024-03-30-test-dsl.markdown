@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "Test DSL"
+date:   2024-03-30 16:20:00 +0200
+---
+
+Také vás občas štve, že když změníte malou věc v implementaci, tak musíte předělat mnoho testů, které jsou na to navázány?
+
+A možná jste si už kvůli něcemu takovému i říkali, zda má vůbec cenu testy psát. Vždyť to přece hronzně zdržuje! Obzvlášť
+když se ty testy musí každou chvilku opravovat, protože jsou tak nesmyslně křehké!
+
+Možná jste se i zkoušeli zamyslet co s tím. Přidat mocky? Ubrat mocky? Testovat komponenty trochu jinak? Nebo možná mít
+robustnější API? To vše vede na různé cesty a různé pokusy končí všelijak.
+
+Abych byl upřímný, tak mi přemýšlení o testech, jejich užitečnosti a tom, jak je napsat lépe příjde jako nekonečná pouť
+na konci které možná také není vůbec nic. Nebo nějaký nový UI model, který to vše udělá za nás a my o práci i přemýšlení
+o testech přijdeme. I tak zůstane otázkou jak testovat výstup z takového modelu a jsme u jiné formy testů, ale to jsem
+odběhl poněkud od tématu.
+
+Prvním krokem, který jsem zvolil k zmenšení množství testů je testovat (to co jde) z pohledu uživatele či API. To znamená, 
+že mou *unit* jednotkou není _metoda_ nebo _třída_, ale celý modul. To v podstatě znamená, že kromě externích služeb
+(jako jsou jiné služby, DB a tak) je vše instanciované tak, jak v reálné aplikaci. Někdo dokonce nepovažuje DB za externí
+službu, pokud ji nasazuje vždy s aplikací.
+
+Takže takový test z pohledu uživatele může mít za úkol něco jako zablokováný uživatel se nemůže přihlásit. Test pak může 
+vypadat nějak takto:
+
+	Vytvoř uživatele s uživatelským jménem michal.novy
+	Zablokuj uživatele michal.novy
+	Přihlášení jako michal.novy by mělo selhat
+
+To pak může vypadat v kódu třeba takto (Kotlin):
+
+```kotlin
+def `blocked user cannot perform login action`() {
+	rest.post("/users") {
+		formData {
+			add("username", "michal.novy")
+			add("password", "pass")
+		}
+	}
+	rest.post("/users/michal.novy/block")
+
+	rest.post("/login") {
+		formData {
+			add("username", "michal.novy")
+			add("password", "pass")
+		}
+	}.andExpect() {
+		status { toBeUnauthorized() }
+	}
+
+}
+```
+
+Pokud takových událostí však budeme mít více, tak můžeme snadno skončit tak, že
+přidáním pole datum narození do registrace musíme upravit 100 testů. Pojdmě tedy
+přidat jednu vrstvu abstrakce a upravit kód na:
+
+```kotlin
+def `blocked user cannot perform login action`() {
+	testApi.createUser("michal.novy", "pass")
+	testApi.blockUser("michal.novy")
+	testApi.login("user.novy", "pass").expectToBeUnauthorized()
+}
+```
+
+Teď si možná říkate, ale to jsme jen posunuli problém jinam. Ano! A ne! Posunuli jsme problém jinam,
+ale pokud nyní přidáme datum narození jako povinný údaj pro vytvoření uživatele, tak nám stačí upravit
+a nebo přidat jednu metodu v _test API_.
+
+```kotlin
+
+def createUser(username: String, password: String): TestResult {
+	...
+}
+
+```
+
+bude nyní vypadat takto:
+
+```kotlin
+
+def createUser(
+	username: String, 
+	password: String, 
+	birthdate: LocalDate = LocalDate.now()
+): TestResult {
+	...
+}
+
+```
+
+A díky tomu nemusíme měnit nic v našich testech! 
+
+
