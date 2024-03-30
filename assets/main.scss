@@ -6,7 +6,7 @@
 body {
 	--base-color: 290, 50%;
 	--ligth-color-shade: 90%;
-	--medium-color-shade: 70%;
+	--medium-color-shade: 50%;
 	--dark-color-shade: 90%;
 	--link-color: 200, 50%, 40%;
 
@@ -30,7 +30,6 @@ body {
 
 .site-header {
 	background: hsl(290, 50%, 30%);
-
 	border-bottom: 5px solid hsl(var(--base-color), 70%);
 
 	.site-title, .site-title:visited {
