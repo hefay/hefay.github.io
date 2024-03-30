@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Test DSL"
+title:  "Problém křehkých testů. Je řešení DSL?"
 date:   2024-03-30 16:20:00 +0200
 ---
 
