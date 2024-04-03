@@ -2,6 +2,8 @@
 layout: post
 title:  "Problém křehkých testů. Je řešení DSL?"
 date:   2024-03-30 16:20:00 +0200
+category: "programovani"
+tags: ["software", "programovani", "testy"]
 ---
 
 Také vás občas štve, že když změníte malou věc v implementaci, tak musíte předělat mnoho testů, které jsou na to navázány?
