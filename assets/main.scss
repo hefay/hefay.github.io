@@ -4,18 +4,47 @@
 
 
 body {
-	--base-color: 290, 50%;
-	--ligth-color-shade: 90%;
-	--medium-color-shade: 50%;
+	--base-color: 265, 19%;
+	--ligth-color-shade: 50%;
+	--medium-color-shade: 30%;
 	--dark-color-shade: 90%;
-	--link-color: 200, 50%, 40%;
+	--link-color: 265, 19%, 40%;
 
-	background-color: hsl(var(--base-color), var(--ligth-color-shade));
-	color: hsl(290, 50%, 30%);
+	//background-color: hsl(var(--base-color), var(--ligth-color-shade));
+	background-color: hsl(198, 77%, 64%);
+	background-image: url("/assets/images/background.jpg");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	color: hsl(265, 19%, 30%);
+
+	main .wrapper {
+		border: 1px solid red;
+		padding: 20px;
+		border-radius: 3px;
+		background-color: hsla(0, 100%, 100%, .75);
+
+		.post-meta {
+			color: hsl(0, 0%, 40%);
+		}
+	}
+
+
+	.footer-heading {
+		color: hsl(0, 0%, 80%);
+	}
 
 	.post-meta, .footer-col-wrapper, .svg-icon {
-		color: hsl(var(--base-color), var(--medium-color-shade));
-		fill: hsl(var(--base-color), var(--medium-color-shade));
+		color: hsl(0, 0%, 80%);
+		fill: hsl(0, 0%, 80%);
+
+		a, a:visited {
+			color: hsl(0, 0%, 80%);
+
+			&:hover, &:active {
+				text-decoration: underline;	
+			}
+
+		}
 	}
 
 	a, a:visited {
@@ -29,8 +58,8 @@ body {
 }
 
 .site-header {
-	background: hsl(290, 50%, 30%);
-	border-bottom: 5px solid hsl(var(--base-color), 70%);
+	background: hsl(198, 59%, 37%);
+	border-bottom: 5px solid hsl(var(--base-color), 30%);
 
 	.site-title, .site-title:visited {
 		color: hsl(0, 100%, 80%);
@@ -40,4 +69,8 @@ body {
 		color: hsl(0, 100%, 80%);
 
 	}
+}
+
+.site-footer {
+
 }
