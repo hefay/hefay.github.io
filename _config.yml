@@ -31,6 +31,7 @@ show_excerpts: true
 # Build settings
 markdown: kramdown
 theme: minima
+timezone: Europe/Prague
 minima:
   date_format: "%e. %-m. %Y, %k:%M"
 plugins:
