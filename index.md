@@ -5,3 +5,4 @@
 layout: home
 list_title: Příspěvky
 ---
+<a rel="me" style="display:none" href="https://mastodonczech.cz/@hefay">Mastodon</a>
