@@ -12,16 +12,20 @@ body {
 
 	//background-color: hsl(var(--base-color), var(--ligth-color-shade));
 	background-color: hsl(198, 77%, 64%);
-	background-image: url("/assets/images/background.jpg");
-	background-repeat: repeat-x;
+	// background-image: url("/assets/images/background.jpg");
+	// background-repeat: repeat-x;
+	background-image: url("/assets/images/background_tile.jpg");
 	background-position: bottom;
 	color: hsl(265, 19%, 30%);
 
 	main .wrapper {
-		border: 1px solid red;
+		border: 0px solid red;
 		padding: 20px;
 		border-radius: 3px;
-		background-color: hsla(0, 100%, 100%, .75);
+		background-color: hsla(0, 100%, 100%, .55);
+		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+		-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
 
 		.post-meta {
 			color: hsl(0, 0%, 40%);
@@ -30,15 +34,15 @@ body {
 
 
 	.footer-heading {
-		color: hsl(0, 0%, 80%);
+		color: hsl(0, 0%, 40%);
 	}
 
 	.post-meta, .footer-col-wrapper, .svg-icon {
-		color: hsl(0, 0%, 80%);
-		fill: hsl(0, 0%, 80%);
+		color: hsl(0, 0%, 50%);
+		fill: hsl(0, 0%, 50%);
 
 		a, a:visited {
-			color: hsl(0, 0%, 80%);
+			color: hsl(0, 0%, 50%);
 
 			&:hover, &:active {
 				text-decoration: underline;	
@@ -58,15 +62,21 @@ body {
 }
 
 .site-header {
-	background: hsl(198, 59%, 37%);
-	border-bottom: 5px solid hsl(var(--base-color), 30%);
+	background: repeating-linear-gradient(
+		45deg,
+		#f0f0f0,
+		#f0f0f0 5px,
+		#e8e8e8 5px,
+		#e8e8e8 7px
+	);
+	border-bottom: 1px solid hsl(var(--base-color), 30%);
 
 	.site-title, .site-title:visited {
-		color: hsl(0, 100%, 80%);
+		color: hsl(0, 0%, 40%);
 	}
 
 	.site-nav .page-link {
-		color: hsl(0, 100%, 80%);
+		color: hsl(0, 0%, 40%);
 
 	}
 }
