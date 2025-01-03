@@ -1,6 +1,7 @@
 ---
 ---
 @import "{{ site.theme }}";
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 
 body {
@@ -30,6 +31,20 @@ body {
 		.post-meta {
 			color: hsl(0, 0%, 40%);
 		}
+	}
+
+	h1, h2, h3, h4 {
+		font-family: "Indie Flower", serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	h2.post-list-heading {
+		font-size: 42px;
+	}
+	
+	h3 .post-link {
+		font-size: 30px;
 	}
 
 
