@@ -34,9 +34,19 @@ theme: minima
 timezone: Europe/Prague
 minima:
   date_format: "%e. %-m. %Y, %k:%M"
+twitter:
+  username: KOKOS250
+  card: summary
+social:
+  name: Lukas Vorisek
+  links:
+    - https://github.com/hefya
+    - https://lukas.voriskovi.eu
+    - https://mastodonczech.cz/@hefay
 plugins:
   - jekyll-feed
   - jekyll-gist
+  - jekyll-seo-tag
   - jemoji
 
 # Exclude from processing.
