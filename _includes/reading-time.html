@@ -1,0 +1,14 @@
+{% capture words %}
+{{ content | number_of_words | minus: 180 }}
+{% endcapture %}
+{% unless words contains '-' %}
+  {% assign minutes = words | plus: 150 | divided_by: 150 %}
+   - 
+  {% if minutes == 1 %}
+    Je to čtení tak na minutku.
+  {% elsif minutes <= 4 %}
+    Je to čtení tak na {{ minutes }} minutky.
+  {% else %}
+    Je to čtení tak na {{ minutes }} minut.
+  {% endif %}
+{% endunless %}
