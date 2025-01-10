@@ -43,6 +43,20 @@ social:
     - https://github.com/hefya
     - https://lukas.voriskovi.eu
     - https://mastodonczech.cz/@hefay
+defaults:
+  - 
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      image: "/assets/images/hefay.png"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+  
 plugins:
   - jekyll-feed
   - jekyll-gist
