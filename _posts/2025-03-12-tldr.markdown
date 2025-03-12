@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Linuxový nástroj TLDR"
+date:   2025-03-12 20:56:00 +0200
+categories: "linux"
+tags: ["linux", "tools"]
+---
+Narazil jsem na zajímavý tool pro Linux, který zkrátí prohledávání manuálů pro jednotlivé příkazy. Není to nic nového, dokonce jsem zjistil, že to hodně mých kolegů používá, takže jen já procházím staromódně manuálové stránky.
+
+Nástroj se jmenuje TLDR a najdete jej na:
+
+<https://web.archive.org/web/20250308214949/https://tldr.sh/>

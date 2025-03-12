@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Výletníci na měsíc"
+date:   2025-02-19 23:28:00 +0200
+categories: "turistika"
+tags: ["turistika", "hicking"]
+---
+Jak jsem psal již minule, našli jsme zajímavý "vozíček", který se dá použít pro pěší turistiku s dětmi, které jen tak snadno středně těžký terén nenavštíví.
+
+Jedná se o takový vozíček, který za sebe zapřáhnete, dítě do něj položíte a hurá, můžete cestovat.
+
+![Hicking cart](/assets/images/hicking-cart.jpeg)
