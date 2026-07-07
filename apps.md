@@ -26,7 +26,7 @@ Jezich² je specializovaná webová aplikace určená k centralizované koordina
 
 Aplikace aktuálně běží ve zkušebním provozu s plně responzivním rozhraním, podporou více jazyků a pokročilými administrativními nástroji pro správu uživatelských účtů.
 
-## Detailní přehled funkcí
+### Detailní přehled funkcí
 
 * **Správa a koordinace skupin (Group Management)**
   Aplikace umožňuje zakládání tematických či časově ohraničených skupin (např. *Vánoce 2026*). Přístup do skupin je řízen pomocí bezpečně generovaných unikátních URL odkazů s definovanou dobou platnosti, které lze doplňkově distribuovat i formou QR kódů. Součástí rozhraní je schvalovací proces ( workflow pro čekající žádosti), kde administrátor skupiny potvrzuje vstup nových členů.
@@ -52,7 +52,7 @@ Aplikace aktuálně běží ve zkušebním provozu s plně responzivním rozhran
 * **Internacionalizace a lokalizační vrstva (i18n)**
   Aplikace je plně lokalizována do českého a anglického jazyka. Přepínání jazykových mutací probíhá na úrovni front-endu pomocí ovládacích prvků v záhlaví aplikace, přičemž systém si volbu jazyka ukládá do konfigurace uživatelského profilu pro budoucí relace.
 
-## Architektura rozhraní
+### Architektura rozhraní
 
 Uživatelské prostředí je rozděleno do čtyř hlavních modulů přístupných přes persistentní navigační lištu:
 1. **Nástěnka (Dashboard):** Výchozí přehled s rozcestníky na aktivní skupiny a rychlým zobrazením stavu vlastního profilu.
