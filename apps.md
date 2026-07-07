@@ -19,9 +19,43 @@ Aplikace není určena pro veřejné použití ani otevřenou registraci. Je ur�
 
 
 <br>
-### Ježich
-Aplikace umožňuje uživatelům vytvářet a spravovat seznamy přání (dárků), které si přejí obdržet. Ke každému přání lze uvést doplňující informace, jako je orientační cena, popis, odkaz na konkrétní produkt, případně vlastní poznámky či komentáře. Seznam přání lze sdílet s ostatními uživateli, typicky rodinou nebo přáteli.
+# Jezich²
+Dostupné na: [jezich.voriskovi.eu](http://jezich.voriskovi.eu)
 
-Ostatní uživatelé mohou jednotlivá přání rezervovat s cílem daný dárek pořídit. Rezervace je pro autora přání neveřejná – ten nevidí, zda si někdo jeho přání rezervoval, čímž je zachováno překvapení. Aplikace tak pomáhá koordinovat obdarovávání, předcházet duplicitním dárkům a zároveň respektovat soukromí obdarovaného.
+Jezich² je specializovaná webová aplikace určená k centralizované koordinaci, evidenci a správě dárkových přání v rámci rodinných a sociálních skupin. Cílem systému je eliminovat duplicitu při nákupech a zjednodušit logistiku spojenou s organizací svátků, narozenin a jiných společenských událostí.
 
-Aplikace je opět pro uzavřenou komunitu a je dostupná na: [jezich.voriskovi.eu](http://jezich.voriskovi.eu)
+Aplikace aktuálně běží ve zkušebním provozu s plně responzivním rozhraním, podporou více jazyků a pokročilými administrativními nástroji pro správu uživatelských účtů.
+
+## Detailní přehled funkcí
+
+* **Správa a koordinace skupin (Group Management)**
+  Aplikace umožňuje zakládání tematických či časově ohraničených skupin (např. *Vánoce 2026*). Přístup do skupin je řízen pomocí bezpečně generovaných unikátních URL odkazů s definovanou dobou platnosti, které lze doplňkově distribuovat i formou QR kódů. Součástí rozhraní je schvalovací proces ( workflow pro čekající žádosti), kde administrátor skupiny potvrzuje vstup nových členů.
+
+* **Strukturované seznamy přání (Wishlists)**
+  Uživatelé mají k dispozici osobní profily pro evidenci požadovaných položek. Každý záznam přání podporuje vložení metadat: přesný název, orientační cena, volitelný textový komentář a přímý hypertextový odkaz na konkrétní e-shop. Systém validuje a zkracuje externí odkazy pro zachování přehlednosti rozhraní. Výpis přání lze strukturovat podle interních kategorií a priorit.
+
+* **Agregovaný nákupní seznam s řízením stavu**
+  Pro nákupčího generuje aplikace konsolidovaný přehled dárků, které se zavázal pořídit pro ostatní členy skupin. Tento seznam funguje jako dynamický to-do list. Položky jsou provázány s databází skupinových přání – aktivací akce „Koupeno“ nebo „Odebrat“ dojde k okamžité aktualizaci stavu u daného dárku, což zamezuje vícenásobnému nákupu stejné položky různými lidmi, aniž by se narušilo překvapení pro obdarovaného.
+
+* **Správa virtuálních uživatelů (Zastoupení dětí a seniorů)**
+  Systém řeší problematiku členů rodiny, kteří nemají vlastní digitální identitu, přístup k technologiím nebo dostatečnou technologickou gramotnost. Uživatel s rolí správce může vytvářet podřízené „virtuální uživatele“. 
+  * **Modul pro správu dětí:** Umožňuje rodičům plně spravovat přání nezletilých dětí, zadávat jejich požadavky do systému a sledovat rezervace ostatních příbuzných.
+  * **Modul pro správu seniorů:** Umožňuje asistovanou správu pro starší členy rodiny, kteří neovládají webové aplikace, ale mají specifická přání, jež je třeba v rodinném kruhu koordinovat.
+
+* **Mechanismus impersonace (Přepínání uživatelských kontextů)**
+  Pro efektivní správu virtuálních uživatelů a pokročilou administraci disponuje aplikace funkcí impersonace („Vydat se za uživatele“). Oprávněný uživatel (např. systémový administrátor nebo rodinný správce) může jedním kliknutím přepnout celé aplikační rozhraní do kontextu zvoleného virtuálního či reálného účtu (např. účet dítěte nebo seniora). V tomto režimu dochází k plné emulaci práv daného uživatele, což umožňuje:
+  * Zakládat, upravovat a mazat přání přímo jménem zastupované osoby.
+  * Kontrolovat přesné zobrazení skupin a položek z perspektivy daného účtu.
+  * Provádět technickou asistenci na dálku bez nutnosti znát přihlašovací heslo uživatele.
+  Režim impersonace je vizuálně indikován persistentním systémovým bannerem s možností okamžitého návratu do původního administrátorského kontextu.
+
+* **Internacionalizace a lokalizační vrstva (i18n)**
+  Aplikace je plně lokalizována do českého a anglického jazyka. Přepínání jazykových mutací probíhá na úrovni front-endu pomocí ovládacích prvků v záhlaví aplikace, přičemž systém si volbu jazyka ukládá do konfigurace uživatelského profilu pro budoucí relace.
+
+## Architektura rozhraní
+
+Uživatelské prostředí je rozděleno do čtyř hlavních modulů přístupných přes persistentní navigační lištu:
+1. **Nástěnka (Dashboard):** Výchozí přehled s rozcestníky na aktivní skupiny a rychlým zobrazením stavu vlastního profilu.
+2. **Detail skupiny:** Matice členů, správa pozvánek a strukturované výpisy přání jednotlivých osob.
+3. **Nákupní seznam:** Osobní kontrolní seznam s dedikovanými akčními tlačítky pro stavové změny položek.
+4. **Profil:** Správa autentizačních údajů (změna hesla), úprava uživatelské biografie a sekce pro správu a přepínání virtuálních uživatelů.
